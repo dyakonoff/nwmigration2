@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.nwtest2.web.products.ProductsEdit"
+        datasource="productsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.nwtest2.web.products">
+    <dsContext>
+        <datasource id="productsDs"
+                    class="com.company.nwtest2.entity.Products"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="productsDs">
+                <column width="250px">
+                    <field property="supplier_IDs"/>
+                    <field property="product_Code"/>
+                    <field property="product_Name"/>
+                    <field property="description"
+                           rows="5"/>
+                    <field property="standard_Cost"/>
+                    <field property="list_Price"/>
+                    <field property="reorder_Level"/>
+                    <field property="target_Level"/>
+                    <field property="quantity_Per_Unit"/>
+                    <field property="discontinued"/>
+                    <field property="minimum_Reorder_Quantity"/>
+                    <field property="category"/>
+                    <field property="attachments"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

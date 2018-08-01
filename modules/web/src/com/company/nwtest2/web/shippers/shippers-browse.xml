@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.shippers.ShippersBrowse"
+        focusComponent="shippersesTable"
+        lookupComponent="shippersesTable"
+        messagesPack="com.company.nwtest2.web.shippers">
+    <dsContext>
+        <groupDatasource id="shippersesDs"
+                         class="com.company.nwtest2.entity.Shippers"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$Shippers e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="shippersesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="shippersesTable"
+                datasource="shippersesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="shippersesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="company"/>
+                <column id="last_Name"/>
+                <column id="first_Name"/>
+                <column id="e_mail_Address"/>
+                <column id="job_Title"/>
+                <column id="business_Phone"/>
+                <column id="home_Phone"/>
+                <column id="mobile_Phone"/>
+                <column id="fax_Number"/>
+                <column id="address"/>
+                <column id="city"/>
+                <column id="state_Province"/>
+                <column id="zIP_Postal_Code"/>
+                <column id="country_Region"/>
+                <column id="web_Page"/>
+                <column id="notes"/>
+                <column id="attachments"/>
+            </columns>
+            <rows datasource="shippersesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="shippersesTable.create"/>
+                <button id="editBtn"
+                        action="shippersesTable.edit"/>
+                <button id="removeBtn"
+                        action="shippersesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

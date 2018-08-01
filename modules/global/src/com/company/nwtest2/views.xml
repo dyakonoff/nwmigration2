@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.nwtest2.entity.InventoryTransactions"
+          extends="_local"
+          name="InventoryTransactions-screen-view">
+        <property name="transaction_Type"
+                  view="_minimal"/>
+        <property name="product_ID"
+                  view="_minimal"/>
+        <property name="purchase_Order_ID"
+                  view="_minimal"/>
+        <property name="customer_Order_ID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.nwtest2.entity.Invoices"
+          extends="_local"
+          name="Invoices-screen-view">
+        <property name="order_ID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.nwtest2.entity.OrderDetails"
+          extends="_local"
+          name="OrderDetails-screen-view">
+        <property name="order_ID"
+                  view="_minimal"/>
+        <property name="product_ID"
+                  view="_minimal"/>
+        <property name="status_ID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.nwtest2.entity.Orders"
+          extends="_local"
+          name="Orders-screen-view">
+        <property name="employee_ID"
+                  view="_minimal"/>
+        <property name="customer_ID"
+                  view="_minimal"/>
+        <property name="shipper_ID"
+                  view="_minimal"/>
+        <property name="tax_Status"
+                  view="_minimal"/>
+        <property name="status_ID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.nwtest2.entity.PurchaseOrderDetails"
+          extends="_local"
+          name="PurchaseOrderDetails-screen-view">
+        <property name="purchase_Order_ID"
+                  view="_minimal"/>
+        <property name="product_ID"
+                  view="_minimal"/>
+        <property name="inventory_ID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.nwtest2.entity.PurchaseOrders"
+          extends="_local"
+          name="PurchaseOrders-screen-view">
+        <property name="supplier_ID"
+                  view="_minimal"/>
+        <property name="created_By"
+                  view="_minimal"/>
+        <property name="status_ID"
+                  view="_minimal"/>
+    </view>
+</views>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-nwtest2"
+          insertBefore="administration">
+        <item screen="nwtest2$Customers.browse"/>
+        <item screen="nwtest2$Employees.browse"/>
+        <item screen="nwtest2$InventoryTransactionTypes.browse"/>
+        <item screen="nwtest2$InventoryTransactions.browse"/>
+        <item screen="nwtest2$Invoices.browse"/>
+        <item screen="nwtest2$OrderDetailsStatus.browse"/>
+        <item screen="nwtest2$OrderDetails.browse"/>
+        <item screen="nwtest2$OrdersStatus.browse"/>
+        <item screen="nwtest2$OrdersTaxStatus.browse"/>
+        <item screen="nwtest2$Orders.browse"/>
+        <item screen="nwtest2$Privilegesnw.browse"/>
+        <item screen="nwtest2$Products.browse"/>
+        <item screen="nwtest2$PurchaseOrderDetails.browse"/>
+        <item screen="nwtest2$PurchaseOrderStatus.browse"/>
+        <item screen="nwtest2$PurchaseOrders.browse"/>
+        <item screen="nwtest2$SalesReports.browse"/>
+        <item screen="nwtest2$Shippers.browse"/>
+        <item screen="nwtest2$Strings.browse"/>
+        <item screen="nwtest2$Suppliers.browse"/>
+    </menu>
+</menu-config>

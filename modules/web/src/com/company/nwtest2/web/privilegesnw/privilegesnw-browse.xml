@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.privilegesnw.PrivilegesnwBrowse"
+        focusComponent="privilegesnwsTable"
+        lookupComponent="privilegesnwsTable"
+        messagesPack="com.company.nwtest2.web.privilegesnw">
+    <dsContext>
+        <groupDatasource id="privilegesnwsDs"
+                         class="com.company.nwtest2.entity.Privilegesnw"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$Privilegesnw e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="privilegesnwsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="privilegesnwsTable"
+                datasource="privilegesnwsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="privilegesnwsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="privilege_Name"/>
+            </columns>
+            <rows datasource="privilegesnwsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="privilegesnwsTable.create"/>
+                <button id="editBtn"
+                        action="privilegesnwsTable.edit"/>
+                <button id="removeBtn"
+                        action="privilegesnwsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

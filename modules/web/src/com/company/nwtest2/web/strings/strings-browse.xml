@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.strings.StringsBrowse"
+        focusComponent="stringsesTable"
+        lookupComponent="stringsesTable"
+        messagesPack="com.company.nwtest2.web.strings">
+    <dsContext>
+        <groupDatasource id="stringsesDs"
+                         class="com.company.nwtest2.entity.Strings"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$Strings e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="stringsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="stringsesTable"
+                datasource="stringsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="stringsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="string_Data"/>
+            </columns>
+            <rows datasource="stringsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="stringsesTable.create"/>
+                <button id="editBtn"
+                        action="stringsesTable.edit"/>
+                <button id="removeBtn"
+                        action="stringsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

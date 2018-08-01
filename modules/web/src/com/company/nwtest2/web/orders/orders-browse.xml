@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.orders.OrdersBrowse"
+        focusComponent="ordersesTable"
+        lookupComponent="ordersesTable"
+        messagesPack="com.company.nwtest2.web.orders">
+    <dsContext>
+        <groupDatasource id="ordersesDs"
+                         class="com.company.nwtest2.entity.Orders"
+                         view="Orders-screen-view">
+            <query>
+                <![CDATA[select e from nwtest2$Orders e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ordersesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ordersesTable"
+                datasource="ordersesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="ordersesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="employee_ID"/>
+                <column id="customer_ID"/>
+                <column id="order_Date"/>
+                <column id="shipped_Date"/>
+                <column id="shipper_ID"/>
+                <column id="ship_Name"/>
+                <column id="ship_Address"/>
+                <column id="ship_City"/>
+                <column id="ship_State_Province"/>
+                <column id="ship_ZIP_Postal_Code"/>
+                <column id="ship_Country_Region"/>
+                <column id="shipping_Fee"/>
+                <column id="taxes"/>
+                <column id="payment_Type"/>
+                <column id="paid_Date"/>
+                <column id="notes"/>
+                <column id="tax_Rate"/>
+                <column id="tax_Status"/>
+                <column id="status_ID"/>
+            </columns>
+            <rows datasource="ordersesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="ordersesTable.create"/>
+                <button id="editBtn"
+                        action="ordersesTable.edit"/>
+                <button id="removeBtn"
+                        action="ordersesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

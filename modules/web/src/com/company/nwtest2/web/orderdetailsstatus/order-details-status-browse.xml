@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.orderdetailsstatus.OrderDetailsStatusBrowse"
+        focusComponent="orderDetailsStatusesTable"
+        lookupComponent="orderDetailsStatusesTable"
+        messagesPack="com.company.nwtest2.web.orderdetailsstatus">
+    <dsContext>
+        <groupDatasource id="orderDetailsStatusesDs"
+                         class="com.company.nwtest2.entity.OrderDetailsStatus"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$OrderDetailsStatus e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="orderDetailsStatusesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="orderDetailsStatusesTable"
+                datasource="orderDetailsStatusesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="orderDetailsStatusesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="status_Name"/>
+            </columns>
+            <rows datasource="orderDetailsStatusesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="orderDetailsStatusesTable.create"/>
+                <button id="editBtn"
+                        action="orderDetailsStatusesTable.edit"/>
+                <button id="removeBtn"
+                        action="orderDetailsStatusesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

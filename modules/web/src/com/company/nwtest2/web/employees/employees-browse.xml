@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.employees.EmployeesBrowse"
+        focusComponent="employeesesTable"
+        lookupComponent="employeesesTable"
+        messagesPack="com.company.nwtest2.web.employees">
+    <dsContext>
+        <groupDatasource id="employeesesDs"
+                         class="com.company.nwtest2.entity.Employees"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$Employees e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="employeesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="employeesesTable"
+                datasource="employeesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="employeesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="company"/>
+                <column id="last_Name"/>
+                <column id="first_Name"/>
+                <column id="e_mail_Address"/>
+                <column id="job_Title"/>
+                <column id="business_Phone"/>
+                <column id="home_Phone"/>
+                <column id="mobile_Phone"/>
+                <column id="fax_Number"/>
+                <column id="address"/>
+                <column id="city"/>
+                <column id="state_Province"/>
+                <column id="zIP_Postal_Code"/>
+                <column id="country_Region"/>
+                <column id="web_Page"/>
+                <column id="notes"/>
+                <column id="attachments"/>
+            </columns>
+            <rows datasource="employeesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="employeesesTable.create"/>
+                <button id="editBtn"
+                        action="employeesesTable.edit"/>
+                <button id="removeBtn"
+                        action="employeesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

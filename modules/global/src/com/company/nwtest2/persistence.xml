@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="nwtest2"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.nwtest2.entity.Customers</class>
+        <class>com.company.nwtest2.entity.Employees</class>
+        <class>com.company.nwtest2.entity.InventoryTransactionTypes</class>
+        <class>com.company.nwtest2.entity.InventoryTransactions</class>
+        <class>com.company.nwtest2.entity.Invoices</class>
+        <class>com.company.nwtest2.entity.OrderDetailsStatus</class>
+        <class>com.company.nwtest2.entity.OrderDetails</class>
+        <class>com.company.nwtest2.entity.OrdersStatus</class>
+        <class>com.company.nwtest2.entity.OrdersTaxStatus</class>
+        <class>com.company.nwtest2.entity.Orders</class>
+        <class>com.company.nwtest2.entity.Privilegesnw</class>
+        <class>com.company.nwtest2.entity.Products</class>
+        <class>com.company.nwtest2.entity.PurchaseOrderDetails</class>
+        <class>com.company.nwtest2.entity.PurchaseOrderStatus</class>
+        <class>com.company.nwtest2.entity.PurchaseOrders</class>
+        <class>com.company.nwtest2.entity.SalesReports</class>
+        <class>com.company.nwtest2.entity.Shippers</class>
+        <class>com.company.nwtest2.entity.Strings</class>
+        <class>com.company.nwtest2.entity.Suppliers</class>
+    </persistence-unit>
+</persistence>

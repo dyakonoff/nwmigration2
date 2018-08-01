@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.nwtest2.web.salesreports.SalesReportsBrowse"
+        focusComponent="salesReportsesTable"
+        lookupComponent="salesReportsesTable"
+        messagesPack="com.company.nwtest2.web.salesreports">
+    <dsContext>
+        <groupDatasource id="salesReportsesDs"
+                         class="com.company.nwtest2.entity.SalesReports"
+                         view="_local">
+            <query>
+                <![CDATA[select e from nwtest2$SalesReports e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="salesReportsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="salesReportsesTable"
+                datasource="salesReportsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="salesReportsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="display"/>
+                <column id="title"/>
+                <column id="filter_Row_Source"/>
+                <column id="_default"/>
+                <column id="group_By"/>
+            </columns>
+            <rows datasource="salesReportsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="salesReportsesTable.create"/>
+                <button id="editBtn"
+                        action="salesReportsesTable.edit"/>
+                <button id="removeBtn"
+                        action="salesReportsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.nwtest2.web.inventorytransactions.InventoryTransactionsEdit"
+        datasource="inventoryTransactionsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.nwtest2.web.inventorytransactions">
+    <dsContext>
+        <datasource id="inventoryTransactionsDs"
+                    class="com.company.nwtest2.entity.InventoryTransactions"
+                    view="InventoryTransactions-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="inventoryTransactionsDs">
+            <column width="250px">
+                <field property="transaction_Type"/>
+                <field property="transaction_Created_Date"/>
+                <field property="transaction_Modified_Date"/>
+                <field property="product_ID"/>
+                <field property="quantity"/>
+                <field property="purchase_Order_ID"/>
+                <field property="customer_Order_ID"/>
+                <field property="comments"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

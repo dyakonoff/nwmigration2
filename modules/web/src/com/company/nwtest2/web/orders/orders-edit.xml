@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.nwtest2.web.orders.OrdersEdit"
+        datasource="ordersDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.nwtest2.web.orders">
+    <dsContext>
+        <datasource id="ordersDs"
+                    class="com.company.nwtest2.entity.Orders"
+                    view="Orders-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="ordersDs">
+                <column width="250px">
+                    <field property="employee_ID"/>
+                    <field property="customer_ID"/>
+                    <field property="order_Date"/>
+                    <field property="shipped_Date"/>
+                    <field property="shipper_ID"/>
+                    <field property="ship_Name"/>
+                    <field property="ship_Address"
+                           rows="5"/>
+                    <field property="ship_City"/>
+                    <field property="ship_State_Province"/>
+                    <field property="ship_ZIP_Postal_Code"/>
+                    <field property="ship_Country_Region"/>
+                    <field property="shipping_Fee"/>
+                    <field property="taxes"/>
+                    <field property="payment_Type"/>
+                    <field property="paid_Date"/>
+                    <field property="notes"
+                           rows="5"/>
+                    <field property="tax_Rate"/>
+                    <field property="tax_Status"/>
+                    <field property="status_ID"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
